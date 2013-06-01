@@ -14,7 +14,7 @@ npm install
 sudo service ninjablock restart
 ```
 
-## Setting Started with XBee
+## Getting Started with XBee
 You can follow [this digi guide](http://examples.digi.com/get-started/basic-xbee-802-15-4-chat/)
 
 ## Notes
