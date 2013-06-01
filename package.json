@@ -1,0 +1,22 @@
+{
+  "name": "ninja-xbee",
+  "version": "0.0.0",
+  "description": "Driver for communicating via XBee",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Daniel Friedman",
+  "license": "MIT",
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "dependencies": {
+    "serialport": "~1.1.0"
+  },
+  "config":{
+    "devices":[]
+  }
+}
