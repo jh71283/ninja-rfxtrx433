@@ -4,9 +4,9 @@ var stream = require('stream')
 var configHandlers = require('./lib/config-handlers')
 
 // Give our driver a stream interface
-util.inherits(xbee,stream);
+util.inherits(rfxtrx433,stream);
 
-function xbee(opts,app) {
+function rfxtrx433(opts,app) {
 
   var self = this;
   this._devices = {};
@@ -18,13 +18,13 @@ function xbee(opts,app) {
   }.bind(this));
 };
 
-xbee.prototype.loadDevice = function(device) {
+rfxtrx433.prototype.loadDevice = function(device) {
 
   if (this._devices[device]) return;
   this._devices[device] = new Device(device,this);
 };
 
-xbee.prototype.config = function(rpc,cb) {
+rfxtrx433.prototype.config = function(rpc,cb) {
 
   var self = this;
   // If rpc is null, we should send the user a menu of what he/she
@@ -42,4 +42,4 @@ xbee.prototype.config = function(rpc,cb) {
 };
 
 // Export it
-module.exports = xbee;
+module.exports = rfxtrx433;
