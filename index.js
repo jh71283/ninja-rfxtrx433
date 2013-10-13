@@ -11,7 +11,7 @@ function rfxtrx433(opts,app) {
   var self = this;
   this._devices = {};
   this.opts = opts;
-
+  this._app = app;
   app.on('client::up',function(){
 
     this.opts.devices.forEach(this.loadDevice.bind(this));
