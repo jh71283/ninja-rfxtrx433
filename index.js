@@ -19,11 +19,11 @@ function rfxtrx433(opts,app) {
 };
 
 rfxtrx433.prototype.loadDevice = function(device) {
-_app.log.info('Loading Device');
-_app.log.info(device);
+this._app.log.info('Loading Device');
+this._app.log.info(device);
   if (this._devices[device]) return;
   this._devices[device] = new Device(device,this);
-  _app.log.info('Registering Device');
+  this._app.log.info('Registering Device');
     this.emit('register',this._devices[device]);
 };
 
