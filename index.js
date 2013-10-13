@@ -22,6 +22,7 @@ rfxtrx433.prototype.loadDevice = function(device) {
 
   if (this._devices[device]) return;
   this._devices[device] = new Device(device,this);
+    this.emit('register',this._devices[device]);
 };
 
 rfxtrx433.prototype.config = function(rpc,cb) {
