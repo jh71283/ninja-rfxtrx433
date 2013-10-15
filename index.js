@@ -9,13 +9,13 @@ var rfxcom = require('rfxcom');
 util.inherits(rfxtrx433,stream);
 
 function rfxtrx433(opts,app) {
-
+this._app.log.info('RfxTrx433 Driver Start');
   var self = this;
   this._devices = {};
   this.opts = opts;
   this._app = app;
+  
   app.on('client::up',function(){
-
     this.opts.devices.forEach(this.loadDevice.bind(this));
   }.bind(this));
   
