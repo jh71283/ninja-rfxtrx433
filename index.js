@@ -17,6 +17,8 @@ function rfxtrx433(opts,app) {
   var rfxtrx = new rfxcom.RfxCom("/dev/ttyUSB0", {debug: true});
   this._rfxtrx = rfxtrx;
 
+
+    this._app.log.info("RFX Device initialisation started");
   this._rfxtrx.initialise(function () {
     this._app.log.info("RFX Device initialised");
   });
