@@ -14,18 +14,19 @@ function rfxtrx433(opts,app) {
   this.opts = opts;
   this._app = app;
   this._app.log.info('RfxTrx433 Driver Start');
-
-  app.on('client::up',function(){
-    this.opts.devices.forEach(this.loadDevice.bind(this));
-  }.bind(this));
-  
   var rfxtrx = new rfxcom.RfxCom("/dev/ttyUSB0", {debug: true});
   this._rfxtrx = rfxtrx;
 
   this._rfxtrx.initialise(function () {
     this._app.log.info("RFX Device initialised");
   });
+  
 
+  app.on('client::up',function(){
+    this.opts.devices.forEach(this.loadDevice.bind(this));
+  }.bind(this));
+  
+  
 
 };
 
