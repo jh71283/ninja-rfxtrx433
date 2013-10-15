@@ -3,7 +3,8 @@ var util = require('util')
 var stream = require('stream')
 var configHandlers = require('./lib/config-handlers')
 var rfxcom = require('rfxcom');
-
+var rfxtrx = new rfxcom.RfxCom("/dev/ttyUSB0", {debug: true});
+this._rfxtrx = rfxtrx;
 
 // Give our driver a stream interface
 util.inherits(rfxtrx433,stream);
@@ -14,11 +15,7 @@ function rfxtrx433(opts,app) {
   this.opts = opts;
   this._app = app;
 
-  var rfxtrx = new rfxcom.RfxCom("/dev/ttyUSB0", {debug: true});
-  this._rfxtrx = rfxtrx;
-
-
-    this._app.log.info("RFX Device initialisation started");
+  this._app.log.info("RFX Device initialisation started");
   this._rfxtrx.initialise(function () {
     this._app.log.info("RFX Device initialised");
   });
