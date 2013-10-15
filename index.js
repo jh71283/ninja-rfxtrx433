@@ -13,7 +13,7 @@ function rfxtrx433(opts,app) {
   this._devices = {};
   this.opts = opts;
   this._app = app;
-  this._app.log.info('RfxTrx433 Driver Start');
+
   var rfxtrx = new rfxcom.RfxCom("/dev/ttyUSB0", {debug: true});
   this._rfxtrx = rfxtrx;
 
